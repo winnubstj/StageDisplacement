@@ -27,6 +27,5 @@ contents = struct2cell(contents);
 nTiles = cellfun(@(x) size(x,2),contents); %only days that have tiles.
 contents = contents(nTiles>1);
 contents = horzcat(contents{:});
-latPos = cellfun(@(x) x.contents.latticePosition,contents); % get Lattice position.
-fileLoc = cellfun(@(x) fullfile(jsonData.monitor.location,x.relativePath),contents,'UniformOutput',false)'; % get file position.
+lat = cellfun(@(x) size(x,2),contents); %only days that have tiles.
 %% Taker out duplicates
